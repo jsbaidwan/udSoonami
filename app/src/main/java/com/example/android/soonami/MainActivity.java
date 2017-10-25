@@ -154,6 +154,12 @@ public class MainActivity extends AppCompatActivity {
          */
         private String makeHttpRequest(URL url) throws IOException {
             String jsonResponse = "";
+
+            // If the URL is null, then return early
+            if(url == null)   {
+                return jsonResponse;
+            }
+
             HttpURLConnection urlConnection = null;
             InputStream inputStream = null;
             try {
