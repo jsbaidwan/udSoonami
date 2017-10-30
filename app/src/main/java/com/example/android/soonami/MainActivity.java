@@ -175,7 +175,7 @@ public class MainActivity extends AppCompatActivity {
                 inputStream = urlConnection.getInputStream();
                 jsonResponse = readFromStream(inputStream);
             } catch (IOException e) {
-                // TODO: Handle the exception
+                 Log.e(LOG_TAG,"Problem retrieving the earthquake JSON results",e);
             } finally {
                 if (urlConnection != null) {
                     urlConnection.disconnect();
