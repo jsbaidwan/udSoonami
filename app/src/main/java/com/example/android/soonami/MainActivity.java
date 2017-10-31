@@ -172,8 +172,10 @@ public class MainActivity extends AppCompatActivity {
 
                 // If the request is successful (response code 200),
                 // then read the input stream and parse the response.
+                if(urlConnection.getResponseCode() == 200)    {
                 inputStream = urlConnection.getInputStream();
                 jsonResponse = readFromStream(inputStream);
+                }
             } catch (IOException e) {
                  Log.e(LOG_TAG,"Problem retrieving the earthquake JSON results",e);
             } finally {
